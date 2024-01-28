@@ -1,0 +1,34 @@
+Git version:
++ git --v					(KTra phiên bản của Git)
+
+Git config:						
++ git config --global user.name "name"
++ git config --global user.email "email"
++ git config --list				(Thông tin vừa config)
+
+Git help:
++ git help -a/--all 				(Hướng dẫn bạn có thể làm được những gì)
+
+Git remote:
++ git remote add <name> <url>			(Liên kết đến remote repository (local & GitHub))
++ git remote set-url <name> <new url> 	 	(Thay đổi địa chỉ của remote repository)
++ git remote rename <old> <new> 		(Thay đổi tên của remote repository)
+
+Git clone:
++ git clone "GitHub_Repo_URL" -b "branch"	(Tải 1 Remote Repo ở nhánh "branch" xuống Local Repo)
+
+Điều khiển Git:
++ git checkout "new_branch"			(Chuyển sang nhánh "new_branch")
++ git status					(KTra trạng thái của Repository)
++ git init					(Khởi tạo git cho thư mục hiện tại)
++ git add <file_name>				(Thêm 1 file trong Working directory vào Staging area)
+  git add .					(Thêm all file)
++ git commit -m "comment"			(Ghi lại các thay đổi vào Local Repository)
++ git log 					(Xem lịch sử làm việc với git (lịch sử commit))
++ git push <remote_name> <branch>		(Đẩy các file trong Local Repo -> Remote Repo)
+
+Git reset:
++ rm -rf .git					(Xóa thư mục .git - Reset lại tất cả)
+
+------- Tham khảo thêm: https://fullstack.edu.vn/blog/bo-tui-21-lenh-git-co-ban-cach-nho-giup-newdev-lam-chu-git-quan-ly-tot-ma-ngu.html
+	
