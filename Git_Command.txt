@@ -1,0 +1,25 @@
+- Cấu hình Git: Kết nối Local Repo (Repository) với GitHub Repo
++ git config --global user.name "name" 		(Tên cho các resposity)
++ git config --global user.email "email"	(Trùng email trên GitHub)
++ git config --list 				(Ktra sau khi config, ấn 'Q' để thoát)
+
+- Git version control:
++ git init					(Tạo một Local Repo trên Máy)
++ git remote add "rm_name" "GitHub_Repo_URL"	(Liên kết Local Repo và Remote Repo trên GitHub)
+  git remote rm "remote_name"			(Xóa một remote)
+  git remote -v					(Danh sách các remote)
+
++ git add "file.xyz"				(Thêm "file.xyz" vào Staging Area)
+  git add .					(Thêm toàn bộ file lên)
++ git commit -m "comment" 			(Đặt Commit Message cho file)
++ git push "rm_name" "branch"			(Đẩy các file vừa thêm lên "branch" - (master ~ main))
+	
++ git clone "GitHub_Repo_URL" -b "branch"	(Tải 1 Remote Repo ở nhánh "branch" xuống Local Repo)
++ git checkout "branch1"			(Chuyển thư mục từ nhánh hiện tại -> "branch1")
+
++ git status					(Ktra có thay đổi giữa Working Dir và Staging Area)
++ git branch -m "branch" "branch1"		(Chuyển từ nhánh "branch" -> "branch1")
+
++ git pull origin "branch"			(KTra máy local và remote trên Git đã đồng bộ chưa)
+
++ rm -rf .git					(Xóa thư mục .git - Reset lại tất cả)
