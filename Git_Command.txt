@@ -1,3 +1,6 @@
+Git structure:
+	Working Directory -> Staging Area -> Local Repository -> Remote Repository
+
 Git version:
 + git --v					(KTra phiên bản của Git)
 
@@ -10,22 +13,35 @@ Git help:
 + git help -a/--all 				(Hướng dẫn bạn có thể làm được những gì)
 
 Git remote:
-+ git remote add <name> <url>			(Liên kết đến remote repository (local & GitHub))
-+ git remote set-url <name> <new url> 	 	(Thay đổi địa chỉ của remote repository)
++ git remote add <remote_name> <url>		(Liên kết đến remote repository (local & GitHub))
++ git remote set-url <remote_name> <new url> 	(Thay đổi địa chỉ của remote repository)
 + git remote rename <old> <new> 		(Thay đổi tên của remote repository)
 
-Git clone:
-+ git clone "GitHub_Repo_URL" -b "branch"	(Tải 1 Remote Repo ở nhánh "branch" xuống Local Repo)
-
 Điều khiển Git:
-+ git checkout "new_branch"			(Chuyển sang nhánh "new_branch")
-+ git status					(KTra trạng thái của Repository)
-+ git init					(Khởi tạo git cho thư mục hiện tại)
-+ git add <file_name>				(Thêm 1 file trong Working directory vào Staging area)
++ git init					(Khởi tạo Local Repo cho thư mục hiện tại - Working Dir)
++ git add <file_name>				(Thêm 1 file trong Working Directory vào Staging area)
   git add .					(Thêm all file)
 + git commit -m "comment"			(Ghi lại các thay đổi vào Local Repository)
-+ git log 					(Xem lịch sử làm việc với git (lịch sử commit))
-+ git push <remote_name> <branch>		(Đẩy các file trong Local Repo -> Remote Repo)
+  git commit --amend -m "comment1"		(Sửa lại các commit)
++ git push <remote_name> <branch>		(Đẩy các commit trong Local Repo -> Remote Repo)
+
++ git checkout "new_branch"			(Chuyển sang nhánh "new_branch")
+  git branch					(Kiểm tra các nhánh hiện có của bạn ở Local)
+  git branch -a					(Kiểm tra các branch hiện có của bạn ở Remote)
+  git branch -d <branch2>			(Xóa một nhánh tại local có tên: "branch2")
++ git status					(KTra trạng thái của Working Dir và Staging Area)
++ git dif <commit1> <commit2>			(Xem các thay đổi giữa commit1, commit2)
++ git log (--oneline)				(Xem lịch sử commit trên branch hiện tại)
++ git reset <file_name>				(Xóa file trong Staging area (file vẫn còn trong Working Dir)
++ git rm <file_name>				(Xóa file trong Staging area (file ko còn trong Working Dir)
+
+Git clone:
++ git clone <GitHub_Repo_URL> <folder_name> 	(Tải 1 Remote Repo trên GitHub vào folder đó)
+
+Git fetch, merge & pull:
++ Git fetch					(Lấy file trên branch của Remote Repo về nhưng chưa muốn merge)
++ Git merge branch2				(Kết hợp nhánh hiện tại + branch2)
++ Git pull					(Đồng bộ hóa Local Repo & Remote Repo - (fetch + merge))
 
 Git reset:
 + rm -rf .git					(Xóa thư mục .git - Reset lại tất cả)
