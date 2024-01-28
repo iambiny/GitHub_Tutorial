@@ -1,25 +1,34 @@
-- Cấu hình Git: Kết nối Local Repo (Repository) với GitHub Repo
-+ git config --global user.name "name" 		(Tên cho các resposity)
-+ git config --global user.email "email"	(Trùng email trên GitHub)
-+ git config --list 				(Ktra sau khi config, ấn 'Q' để thoát)
+Git version:
++ git --v					(KTra phiên bản của Git)
 
-- Git version control:
-+ git init					(Tạo một Local Repo trên Máy)
-+ git remote add "rm_name" "GitHub_Repo_URL"	(Liên kết Local Repo và Remote Repo trên GitHub)
-  git remote rm "remote_name"			(Xóa một remote)
-  git remote -v					(Danh sách các remote)
+Git config:						
++ git config --global user.name "name"
++ git config --global user.email "email"
++ git config --list				(Thông tin vừa config)
 
-+ git add "file.xyz"				(Thêm "file.xyz" vào Staging Area)
-  git add .					(Thêm toàn bộ file lên)
-+ git commit -m "comment" 			(Đặt Commit Message cho file)
-+ git push "rm_name" "branch"			(Đẩy các file vừa thêm lên "branch" - (master ~ main))
-	
+Git help:
++ git help -a/--all 				(Hướng dẫn bạn có thể làm được những gì)
+
+Git remote:
++ git remote add <name> <url>			(Liên kết đến remote repository (local & GitHub))
++ git remote set-url <name> <new url> 	 	(Thay đổi địa chỉ của remote repository)
++ git remote rename <old> <new> 		(Thay đổi tên của remote repository)
+
+Git clone:
 + git clone "GitHub_Repo_URL" -b "branch"	(Tải 1 Remote Repo ở nhánh "branch" xuống Local Repo)
-+ git checkout "branch1"			(Chuyển thư mục từ nhánh hiện tại -> "branch1")
 
-+ git status					(Ktra có thay đổi giữa Working Dir và Staging Area)
-+ git branch -m "branch" "branch1"		(Chuyển từ nhánh "branch" -> "branch1")
+Điều khiển Git:
++ git checkout "new_branch"			(Chuyển sang nhánh "new_branch")
++ git status					(KTra trạng thái của Repository)
++ git init					(Khởi tạo git cho thư mục hiện tại)
++ git add <file_name>				(Thêm 1 file trong Working directory vào Staging area)
+  git add .					(Thêm all file)
++ git commit -m "comment"			(Ghi lại các thay đổi vào Local Repository)
++ git log 					(Xem lịch sử làm việc với git (lịch sử commit))
++ git push <remote_name> <branch>		(Đẩy các file trong Local Repo -> Remote Repo)
 
-+ git pull origin "branch"			(KTra máy local và remote trên Git đã đồng bộ chưa)
-
+Git reset:
 + rm -rf .git					(Xóa thư mục .git - Reset lại tất cả)
+
+------- Tham khảo thêm: https://fullstack.edu.vn/blog/bo-tui-21-lenh-git-co-ban-cach-nho-giup-newdev-lam-chu-git-quan-ly-tot-ma-ngu.html
+	
