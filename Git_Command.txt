@@ -8,6 +8,7 @@ Git config:
 + git config --global user.name "name"
 + git config --global user.email "email"
 + git config --list				(Thông tin vừa config)
++ git config --global init.defaultBranch <bra>  (Đặt bra là defaultBranch)
 
 Git help:
 + git help -a/--all 				(Hướng dẫn bạn có thể làm được những gì)
@@ -17,8 +18,12 @@ Git remote:
 + git remote set-url <remote_name> <new url> 	(Thay đổi địa chỉ của remote repository)
 + git remote rename <old> <new> 		(Thay đổi tên của remote repository)
 
+* Trước khi push file từ Local Repo -> Remote Repo cần phải "git pull" (hoặc "git fetch" + "git merge")
+  để Đồng bộ hóa Local và Remote, không thì sẽ xung đột
+
 Điều khiển Git:
 + git init					(Khởi tạo Local Repo cho thư mục hiện tại - Working Dir)
++ git pull <remote_name> <branch>		(Đồng bộ hóa Local Repo & Remote Repo trước khi push mới vào)
 + git add <file_name>				(Thêm 1 file trong Working Directory vào Staging area)
   git add .					(Thêm all file)
 + git commit -m "comment"			(Ghi lại các thay đổi vào Local Repository)
@@ -26,6 +31,7 @@ Git remote:
 + git push <remote_name> <branch>		(Đẩy các commit trong Local Repo -> Remote Repo)
 
 + git checkout "new_branch"			(Chuyển sang nhánh "new_branch")
+  git checkout -b "new_branch"			(Tạo và Chuyển sang nhánh "new_branch" mới)
   git branch					(Kiểm tra các nhánh hiện có của bạn ở Local)
   git branch -a					(Kiểm tra các branch hiện có của bạn ở Remote)
   git branch -d <branch2>			(Xóa một nhánh tại local có tên: "branch2")
@@ -39,9 +45,9 @@ Git clone:
 + git clone <GitHub_Repo_URL> <folder_name> 	(Tải 1 Remote Repo trên GitHub vào folder đó)
 
 Git fetch, merge & pull:
-+ Git fetch					(Lấy file trên branch của Remote Repo về nhưng chưa muốn merge)
-+ Git merge branch2				(Kết hợp nhánh hiện tại + branch2)
-+ Git pull					(Đồng bộ hóa Local Repo & Remote Repo - (fetch + merge))
++ git fetch <remote_name>			(Xác nhận file trên Remote Repo về Local nhưng chưa muốn merge về Working Dir)
++ git merge <remote_name> branch		(Kết hợp nhánh hiện tại + branch)
++ git pull <remote_name> <branch>		(Đồng bộ hóa Local Repo & Remote Repo - (fetch + merge))
 
 Git reset:
 + rm -rf .git					(Xóa thư mục .git - Reset lại tất cả)
